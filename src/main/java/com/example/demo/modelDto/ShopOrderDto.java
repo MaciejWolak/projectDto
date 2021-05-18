@@ -16,5 +16,7 @@ public class ShopOrderDto {
     private LocalDateTime updateDateTime;
     @JsonProperty("user")
     private User user;
+    @JsonProperty("grandTotalPrice")
+    private double grandTotalPrice;
 
 }

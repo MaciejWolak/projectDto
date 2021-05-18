@@ -1,5 +1,6 @@
 package com.example.demo.modelDto;
 
+import com.example.demo.model.UserAuthority;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import lombok.Data;
@@ -19,9 +20,15 @@ public class UserDto {
     @JsonProperty("password")
     private String password;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("username")
+    private String username;
 
     @JsonProperty("surname")
     private String surname;
+
+    @JsonProperty("authority")
+    private UserAuthority authority;
+
+    @JsonProperty("token")
+    private String token;
 }

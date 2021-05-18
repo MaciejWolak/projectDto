@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.model.User;
 import com.example.demo.modelDto.UserDto;
+import com.example.demo.security.AuthResponse;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
@@ -15,5 +18,11 @@ public interface UserService {
 
     UserDto update(UserDto updateUser);
 
+    UserDetails findByToken(String token);
 
+    UserDetails register(UserDto userDto);
+
+    AuthResponse login(String username, String password);
+
+    void logout(String username);
 }

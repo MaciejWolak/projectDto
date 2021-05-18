@@ -15,4 +15,8 @@ public class ProductDto {
     private Double price;
     @JsonProperty("quantity")
     private int quantity;
+    @JsonProperty("currentTotalUnitsInStock")
+    private int currentTotalUnitsInStock;
+    @JsonProperty("totalUnitsInOrder")
+    private int totalUnitsInOrder;
 }
