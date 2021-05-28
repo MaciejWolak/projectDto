@@ -1,0 +1,12 @@
+POST http://localhost:8080/itemCarts
+Content-Type: application/json
+
+{
+  "product": {
+    "id": 1
+  },
+  "quantity": 1,
+  "order": {
+    "id": 1
+}
+  }

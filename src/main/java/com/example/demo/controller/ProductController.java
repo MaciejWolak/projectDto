@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 
-
 import com.example.demo.modelDto.ProductDto;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,19 +32,18 @@ public class ProductController {
         }
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
+
     @PostMapping("/products")
     public ResponseEntity<ProductDto>createNewProduct(@Valid @RequestBody ProductDto newProduct) throws IOException {
 
         ProductDto persistedProduct = productService.createNew(newProduct);
         return new ResponseEntity<>(persistedProduct,HttpStatus.CREATED);
     }
-
     @GetMapping("/products/{id}")
     public ResponseEntity<ProductDto>getProduct(@PathVariable long id){
         ProductDto productDto = productService.getOne(id);
         return new ResponseEntity<>(productDto,HttpStatus.OK);
     }
-
     @DeleteMapping("/products/{id}")
     public ResponseEntity<ProductDto>deleteProduct(@PathVariable long id){
         productService.delete(id);
@@ -59,6 +57,7 @@ public class ProductController {
         newProduct.setDescription(product.getDescription());
         newProduct.setPrice(product.getPrice());
         newProduct.setQuantity(product.getQuantity());
+        newProduct.setImageUrl(product.getImageUrl());
         productService.update(newProduct);
         return new ResponseEntity<>(product,HttpStatus.OK);
     }

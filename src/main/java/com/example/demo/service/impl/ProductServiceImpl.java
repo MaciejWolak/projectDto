@@ -26,6 +26,8 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDto> getAll() {
         return mapper.productAll(productRepository.findAll());
     }
+
+
     @Override
     public ProductDto createNew(ProductDto newProduct) {
         Product product = mapper.productDtoToProduct(newProduct);
@@ -52,6 +54,7 @@ public class ProductServiceImpl implements ProductService {
         product.setDescription(update.getDescription());
         product.setPrice(update.getPrice());
         product.setQuantity(update.getQuantity());
+        product.setImageUrl(update.getImageUrl());
         product = productRepository.save(product);
         return mapper.productToProductDto(product);
     }

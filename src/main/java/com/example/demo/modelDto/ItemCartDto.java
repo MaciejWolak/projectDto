@@ -14,6 +14,8 @@ public class ItemCartDto {
     private Product product;
     @JsonProperty("quantity")
     private int quantity;
-    @JsonProperty("shopOrder")
+    @JsonProperty("order")
     private ShopOrder shopOrder;
+    @JsonProperty("totalPrice")
+    private double totalPrice;
 }

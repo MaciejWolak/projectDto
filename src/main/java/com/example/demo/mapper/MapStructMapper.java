@@ -17,6 +17,10 @@ public interface MapStructMapper {
     User userDtoToUser(UserDto userDto);
     List<UserDto> usersAll(List<User> users);
 
+    UserGetDto userToUserGetDto(User user);
+    User userGetDtoToUser(UserGetDto userGetDto);
+    List<UserGetDto> usersGetAll(List<User> users);
+
     ProductDto productToProductDto(Product product);
     Product productDtoToProduct(ProductDto productDto);
     List<ProductDto> productAll(List<Product> products);

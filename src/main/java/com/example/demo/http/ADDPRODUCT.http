@@ -1,0 +1,8 @@
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{"name": "Opele",
+  "description": "12345678",
+"price":  25000,
+"quantity": 10,
+"imageUrl":  "https://www.swiatobrazu.pl/zdjecie/artykuly/546778/pomysly-na-zdjecia.-jordi-puig-pokazuje-jak-uzyskac-ciekawe-efekty-za-niewielkie-pieniadze..jpg"}

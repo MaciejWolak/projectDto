@@ -1,19 +1,28 @@
 package com.example.demo.service;
 
 import com.example.demo.modelDto.UserDto;
+import com.example.demo.modelDto.UserGetDto;
+import com.example.demo.security.AuthResponse;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
 public interface UserService {
-    List<UserDto> getAll();
+    List<UserGetDto> getAll();
 
     UserDto createNew(UserDto newUser);
 
-    UserDto getOne(long id);
+    UserGetDto getOne(long id);
 
     void delete(long id);
 
-    UserDto update(UserDto updateUser);
+    UserGetDto update(UserGetDto updateGetUser);
 
+    UserDetails findByToken(String token);
 
+    UserDetails register(UserDto userDto);
+
+    AuthResponse login(String username, String password);
+
+    void logout(String username);
 }
